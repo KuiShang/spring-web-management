@@ -20,7 +20,6 @@ public class EmpServiceImpl implements EmpService {
         Long count = empMapper.count();
         Integer start = (page-1) * pageSize;
         List<Emp> empList = empMapper.list(start, pageSize);
-        PageBean pageBean = new PageBean<>(count, empList);
-        return pageBean;
+        return new PageBean<>(count, empList);
     }
 }

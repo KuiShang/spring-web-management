@@ -46,7 +46,7 @@ public class DeptController {
 
     /**
      * 新增部门
-     * @param dept
+     * @param dept dept
      * @return Result
      */
     @PostMapping

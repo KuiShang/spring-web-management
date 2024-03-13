@@ -1,5 +1,6 @@
 package com.kkorg.controller;
 
+import com.kkorg.pojo.Emp;
 import com.kkorg.pojo.PageBean;
 import com.kkorg.pojo.Result;
 import com.kkorg.service.EmpService;
@@ -23,7 +24,7 @@ public class EmpController {
     @GetMapping
     public Result page(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer pageSize) {
         log.info("请求员工数据,{}, {}",page, pageSize);
-        PageBean pageBean = empService.page(page, pageSize);
+        PageBean<Emp> pageBean = empService.page(page, pageSize);
         return  Result.success(pageBean);
     }
 }
